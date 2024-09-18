@@ -104,7 +104,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, showToastMessage
 
   const { hasLetter, hasNumber, isValidLength } = validatePassword(signupPassword);
 
-  const handleSignup = () => {
+  const handleSignup = async () => {
     if (!hasLetter || !hasNumber || !isValidLength) {
       showToastMessage('A senha deve ter pelo menos 5 caracteres, incluindo uma letra e um número.', false);
       return;
@@ -115,8 +115,26 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, showToastMessage
       return;
     }
 
-    showToastMessage('Usuário criado com sucesso!', true);
-    onClose();
+    try {
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password: signupPassword }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        showToastMessage('Usuário criado com sucesso!', true);
+        onClose();
+      } else {
+        showToastMessage(data.message || 'Erro ao criar usuário.', false);
+      }
+    } catch (error) {
+      showToastMessage('Erro ao criar usuário. Tente novamente.', false);
+    }
   };
 
   return (
