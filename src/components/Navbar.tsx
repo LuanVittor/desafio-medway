@@ -2,6 +2,8 @@
 
 import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const jumpMed = keyframes`
   0% { transform: translateY(0); color: #ffffff; }
@@ -69,6 +71,7 @@ const LetterWay = styled.span<{ $delay: string }>`
 const NavItems = styled.div`
   display: flex;
   gap: 30px;
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`
@@ -85,7 +88,37 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const LogoutButton = styled.button`
+  background-color: transparent;
+  color: #001e56;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #e74c3c;
+  }
+`;
+
 const Navbar: React.FC = () => {
+  const router = useRouter();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const isAuth = localStorage.getItem('isAuthenticated');
+    if (isAuth === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    setIsAuthenticated(false);
+  };
+
   return (
     <Nav>
       <NavContainer>
@@ -100,8 +133,9 @@ const Navbar: React.FC = () => {
         <NavItems>
           <StyledLink href="/about">Sobre Mim</StyledLink>
           <StyledLink href="/hobbies">Hobbies</StyledLink>
-          <StyledLink href="/projects">Projetos</StyledLink> 
+          <StyledLink href="/projects">Projetos</StyledLink>
           <StyledLink href="/contact">Contato</StyledLink>
+          <StyledLink href="/" onClick={handleLogout}>Logout</StyledLink>
         </NavItems>
       </NavContainer>
     </Nav>
