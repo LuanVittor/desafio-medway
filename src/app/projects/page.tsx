@@ -92,35 +92,50 @@ const ProjectsPage: React.FC = () => {
         <ProjectsContainer>
           <Card>
             <CardImage>
-              <Image src="/images/TrybeStore.png" alt="Trybe Store" layout="fill" objectFit="cover" />
+              <Image
+                src="/images/TrybeStore.png"
+                alt="Trybe Store"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
             </CardImage>
             <CardTitle>Trybe Store</CardTitle>
             <CardText>
               Uma loja online completa, feita em React.js, com todas as informações retiradas da API do MercadoLivre.
             </CardText>
-            <CardText> Realizado em : 2021</CardText>
+            <CardText> Realizado em: 2021</CardText>
             <Button onClick={() => router.push('/projects/1')}>Mais Informações</Button>
           </Card>
           <Card>
             <CardImage>
-              <Image src="/images/Recipes_App.png" alt="Recipes App" layout="fill" objectFit="cover" />
+              <Image
+                src="/images/Recipes_App.png"
+                alt="Recipes App"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
             </CardImage>
             <CardTitle>Recipes App</CardTitle>
             <CardText>
               Um site complexo de receitas, feito em React.js, com suas informações extraídas de algumas APIs.
             </CardText>
-            <CardText> Realizado em : 2021</CardText>
+            <CardText> Realizado em: 2021</CardText>
             <Button onClick={() => router.push('/projects/2')}>Mais Informações</Button>
           </Card>
           <Card>
             <CardImage>
-              <Image src="/images/Kahootify.png" alt="Kahootify" layout="fill" objectFit="cover" />
+              <Image
+                src="/images/Kahootify.png"
+                alt="Kahootify"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
             </CardImage>
             <CardTitle>Kahootify</CardTitle>
             <CardText>
               Um jogo de adivinhação baseado no jogo Kahoot feito em JavaScript puro, usando a API do Spotify.
             </CardText>
-            <CardText> Realizado em : 2021</CardText>
+            <CardText> Realizado em: 2021</CardText>
             <Button onClick={() => router.push('/projects/3')}>Mais Informações</Button>
           </Card>
         </ProjectsContainer>
