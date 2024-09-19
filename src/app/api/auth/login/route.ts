@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
+import jwt from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
+const SECRET_KEY = 'supersecretkey';
 
 export async function POST(request: Request) {
   const { email, password } = await request.json();
@@ -19,9 +21,11 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Credenciais inválidas.' }, { status: 401 });
     }
 
-    return NextResponse.json({ message: 'Login bem-sucedido!' }, { status: 200 });
+    const token = jwt.sign({ userId: user.id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
+
+    return NextResponse.json({ message: 'Login bem-sucedido!', token }, { status: 200 });
   } catch (error) {
-    console.error('Erro no login:', error);
-    return NextResponse.json({ message: 'Erro no login.' }, { status: 500 });
+    console.error('Erro ao fazer login:', error);
+    return NextResponse.json({ message: 'Erro ao fazer login.' }, { status: 500 });
   }
 }
