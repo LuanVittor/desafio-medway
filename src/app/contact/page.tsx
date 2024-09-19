@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
+import withAuth from '@/hoc/withAuth';
 
 const Container = styled.div`
   display: flex;
@@ -78,4 +79,4 @@ const ContactPage: React.FC = () => {
   );
 };
 
-export default ContactPage;
+export default withAuth(ContactPage);

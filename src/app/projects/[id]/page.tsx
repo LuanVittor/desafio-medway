@@ -3,6 +3,7 @@
 import styled from 'styled-components';
 import { useParams, useRouter } from 'next/navigation';
 import Navbar from '../../../components/Navbar';
+import withAuth from '@/hoc/withAuth';
 
 const PROJECTS = [
   {
@@ -136,4 +137,4 @@ const ProjectDetailPage: React.FC = () => {
   );
 };
 
-export default ProjectDetailPage;
+export default withAuth(ProjectDetailPage);

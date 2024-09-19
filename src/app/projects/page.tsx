@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Navbar from '../../components/Navbar';
+import withAuth from '@/hoc/withAuth';
 
 const MainContainer = styled.div`
   display: flex;
@@ -144,4 +145,4 @@ const ProjectsPage: React.FC = () => {
   );
 };
 
-export default ProjectsPage;
+export default withAuth(ProjectsPage);

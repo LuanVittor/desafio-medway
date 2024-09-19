@@ -3,6 +3,7 @@
 import styled, { keyframes } from 'styled-components';
 import { useRouter } from 'next/navigation';
 import Navbar from '../../components/Navbar';
+import withAuth from '@/hoc/withAuth';
 
 const fadeIn = keyframes`
   0% { opacity: 0; transform: translateY(-20px); }
@@ -216,4 +217,4 @@ const AboutPage: React.FC = () => {
   );
 };
 
-export default AboutPage;
+export default withAuth(AboutPage);

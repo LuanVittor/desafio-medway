@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar';
 import HobbyCard from '../../components/HobbyCard';
 import HobbyModal from '../../components/HobbyModal';
 import { hobbiesData } from '../../data/hobbiesData';
+import withAuth from '@/hoc/withAuth';
 
 const Container = styled.div`
   display: flex;
@@ -70,4 +71,4 @@ const HobbiesPage: React.FC = () => {
   );
 };
 
-export default HobbiesPage;
+export default withAuth(HobbiesPage);
