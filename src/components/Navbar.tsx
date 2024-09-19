@@ -3,7 +3,6 @@
 import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 
 const jumpMed = keyframes`
   0% { transform: translateY(0); color: #ffffff; }
@@ -105,19 +104,12 @@ const LogoutButton = styled.button`
 
 const Navbar: React.FC = () => {
   const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    const isAuth = localStorage.getItem('isAuthenticated');
-    if (isAuth === 'true') {
-      setIsAuthenticated(true);
-    }
-  }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
-    setIsAuthenticated(false);
+    localStorage.removeItem('auth-token');
+    router.push('/');
   };
+  
 
   return (
     <Nav>
