@@ -2,7 +2,6 @@
 
 import { Card } from "./style";
 
-
 interface HobbyCardProps {
   title: string;
   bgImage: string;

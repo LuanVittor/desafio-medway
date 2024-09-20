@@ -1,16 +1,24 @@
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 
-export const jumpMed = keyframes`
+interface LetterProps {
+  $delay: string;
+  secondaryColor: string;
+}
+
+const createJumpAnimation = (secondaryColor: string) => keyframes`
   0% { transform: translateY(0); color: #ffffff; }
-  50% { transform: translateY(-10px); color: #001e56; }
-  100% { transform: translateY(0); color: #001e56; }
+  50% { transform: translateY(-10px); color: ${secondaryColor}; }
+  100% { transform: translateY(0); color: ${secondaryColor}; }
 `;
 
-export const jumpWay = keyframes`
-  0% { transform: translateY(0); color: #ffffff; }
-  50% { transform: translateY(-10px); color: #01cfb5; }
-  100% { transform: translateY(0); color: #01cfb5; }
+export const Letter = styled.span<LetterProps>`
+  display: inline-block;
+  animation: ${(props) => createJumpAnimation(props.secondaryColor)} 0.5s ease-in-out forwards;
+  animation-delay: ${(props) => props.$delay};
+  animation-iteration-count: 1;
+  color: #ffffff;
+  transition: color 0.5s;
 `;
 
 export const Nav = styled.nav`
@@ -46,23 +54,6 @@ export const Logo = styled.div`
   display: flex;
 `;
 
-export const LetterMed = styled.span<{ $delay: string }>`
-  display: inline-block;
-  animation: ${jumpMed} 0.5s ease-in-out forwards;
-  animation-delay: ${(props) => props.$delay};
-  animation-iteration-count: 1;
-  color: #ffffff;
-  transition: color 0.5s;
-`;
-
-export const LetterWay = styled.span<{ $delay: string }>`
-  display: inline-block;
-  animation: ${jumpWay} 0.5s ease-in-out forwards;
-  animation-delay: ${(props) => props.$delay};
-  animation-iteration-count: 1;
-  color: #ffffff;
-  transition: color 0.5s;
-`;
 
 export const NavItems = styled.div`
   display: flex;
@@ -81,20 +72,5 @@ export const StyledLink = styled(Link)`
 
   &:hover {
     transform: translateY(-2px);
-  }
-`;
-
-export const LogoutButton = styled.button`
-  background-color: transparent;
-  color: #001e56;
-  font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: color 0.3s;
-
-  &:hover {
-    color: #e74c3c;
   }
 `;

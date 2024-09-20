@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import { NavContainer, Logo, NavItems, Nav, LetterMed, LetterWay, StyledLink } from './style';
+import { NavContainer, Logo, NavItems, Nav, Letter, StyledLink } from './style';
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -11,17 +11,16 @@ const Navbar: React.FC = () => {
     router.push('/');
   };
   
-
   return (
     <Nav>
       <NavContainer>
         <Logo>
-          <LetterMed $delay="0s">m</LetterMed>
-          <LetterMed $delay="0.3s">e</LetterMed>
-          <LetterMed $delay="0.6s">d</LetterMed>
-          <LetterWay $delay="0.9s">w</LetterWay>
-          <LetterWay $delay="1.2s">a</LetterWay>
-          <LetterWay $delay="1.5s">y</LetterWay>
+          <Letter $delay="0s" secondaryColor="#001e56">m</Letter>
+          <Letter $delay="0.3s" secondaryColor="#001e56">e</Letter>
+          <Letter $delay="0.6s" secondaryColor="#001e56">d</Letter>
+          <Letter $delay="0.9s" secondaryColor="#01cfb5">w</Letter>
+          <Letter $delay="1.2s" secondaryColor="#01cfb5">a</Letter>
+          <Letter $delay="1.5s" secondaryColor="#01cfb5">y</Letter>
         </Logo>
         <NavItems>
           <StyledLink href="/about">Sobre Mim</StyledLink>

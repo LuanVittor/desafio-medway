@@ -1,9 +1,8 @@
 "use client";
 
-import styled from 'styled-components';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
-import RegisterModal from '@/components/RegisterModal';
+import RegisterModal from '@/components/RegisterModal/RegisterModal';
 import { Button, Card, Container, Input, RegisterLink, Title, Toast } from './style';
 
 const LoginPage: React.FC = () => {
@@ -36,13 +35,13 @@ const LoginPage: React.FC = () => {
         },
         body: JSON.stringify({ email, password }),
       });
-  
+
+      const data = await response.json();
+
       if (response.ok) {
-        const data = await response.json();
         localStorage.setItem('auth-token', data.token);
         router.push('/about');
       } else {
-        const data = await response.json();
         showToastMessage(data.message || 'Erro ao fazer login', false);
       }
     } catch (error) {
@@ -50,7 +49,6 @@ const LoginPage: React.FC = () => {
       showToastMessage('Erro ao fazer login. Tente novamente.', false);
     }
   };
-  
 
   const showToastMessage = (message: string, success: boolean) => {
     setShowToast({ message, success });

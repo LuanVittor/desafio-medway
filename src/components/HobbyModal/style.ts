@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Modal = styled.div<{ $isOpen: boolean }>`
-  display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')}; /* Controle de exibição com base na prop "$isOpen" */
+  display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
   position: fixed;
   top: 0;
   left: 0;

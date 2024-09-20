@@ -16,7 +16,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, showToastMessage
   const validatePassword = (password: string) => {
     const hasLetter = /[A-Za-z]/.test(password);
     const hasNumber = /\d/.test(password);
-    const isValidLength = password.length >= 5;
+    const isValidLength = password.length >= 6;
     return { hasLetter, hasNumber, isValidLength };
   };
 
@@ -24,7 +24,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, showToastMessage
 
   const handleSignup = async () => {
     if (!hasLetter || !hasNumber || !isValidLength) {
-      showToastMessage('A senha deve ter pelo menos 5 caracteres, incluindo uma letra e um número.', false);
+      showToastMessage('A senha deve ter pelo menos 6 caracteres, incluindo uma letra e um número.', false);
       return;
     }
 
@@ -84,9 +84,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, showToastMessage
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        {signupPassword !== confirmPassword && confirmPassword && (
-          <Requirement isValid={signupPassword === confirmPassword}>As senhas devem coincidir</Requirement>
-        )}
+          <Requirement isValid={signupPassword === confirmPassword && confirmPassword.length > 0}>As senhas devem coincidir</Requirement>
         <Button onClick={handleSignup}>Cadastrar</Button>
       </ModalContent>
     </ModalOverlay>
