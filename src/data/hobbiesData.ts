@@ -15,30 +15,6 @@ export const hobbiesData = [
       images: ['/images/skate_1.jpg', '/images/skate_2.jpg', '/images/skate_3.jpg'],
       cursor: "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\"><text y=\"20\" font-size=\"20\">🛹</text></svg>'), auto"
     },
-    // { 
-    //   id: 3, 
-    //   title: 'Tatuagem', 
-    //   description: 'Cada tatuagem que tenho carrega um significado especial. Seja uma homenagem a alguém que amo, um lembrete de um momento importante da minha vida, ou simplesmente uma expressão artística, minhas tatuagens contam a história de quem eu sou.', 
-    //   bgImage: '/images/tattoo.jpg',
-    //   images: ['/images/tattoo_1.jpg', '/images/tattoo_2.jpg', '/images/tattoo_3.jpg'],
-    //   cursor: "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\"><text y=\"20\" font-size=\"20\">🖋️</text></svg>'), auto"
-    // },
-    // { 
-    //   id: 4, 
-    //   title: 'Namoro', 
-    //   description: 'Estar em um relacionamento saudável e feliz é uma das melhores coisas da minha vida. Minha namorada é minha parceira, amiga e confidente. Juntos, compartilhamos momentos inesquecíveis.', 
-    //   bgImage: '/images/namoro.jpg',
-    //   images: ['/images/namoro_1.jpg', '/images/namoro_2.jpg', '/images/namoro_3.jpg'],
-    //   cursor: "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\"><text y=\"20\" font-size=\"20\">❤️</text></svg>'), auto"
-    // },
-    // { 
-    //   id: 5, 
-    //   title: 'Carros', 
-    //   description: 'Carros sempre foram uma paixão para mim. Desde criança, adorei colecionar miniaturas e assistir a corridas. Gosto de dirigir e explorar o potencial dos motores, especialmente em carros esportivos.', 
-    //   bgImage: '/images/cars.jpg',
-    //   images: ['/images/cars_1.jpg', '/images/cars_2.jpg', '/images/cars_3.jpg'],
-    //   cursor: "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\"><text y=\"20\" font-size=\"20\">🚗</text></svg>'), auto"
-    // },
     { 
       id: 6, 
       title: 'Música', 
@@ -55,13 +31,5 @@ export const hobbiesData = [
       images: ['/images/videogames_1.jpg', '/images/videogames_2.jpg', '/images/videogames_3.jpg'],
       cursor: "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\"><text y=\"20\" font-size=\"20\">🎮</text></svg>'), auto"
     },
-    // { 
-    //   id: 8, 
-    //   title: 'Outro Hobby', 
-    //   description: 'Além dos hobbies mencionados, estou sempre em busca de novas atividades para experimentar e aprender. Gosto de me desafiar a sair da zona de conforto, seja aprendendo uma nova habilidade ou viajando para um lugar diferente.', 
-    //   bgImage: '/images/other.jpg',
-    //   images: ['/images/other_1.jpg', '/images/other_2.jpg', '/images/other_3.jpg'],
-    //   cursor: "url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\"><text y=\"20\" font-size=\"20\">✨</text></svg>'), auto"
-    // }
   ];
   

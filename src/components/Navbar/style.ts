@@ -1,22 +1,19 @@
-"use client";
-
-import styled, { keyframes } from 'styled-components';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import styled, { keyframes } from 'styled-components';
 
-const jumpMed = keyframes`
+export const jumpMed = keyframes`
   0% { transform: translateY(0); color: #ffffff; }
   50% { transform: translateY(-10px); color: #001e56; }
   100% { transform: translateY(0); color: #001e56; }
 `;
 
-const jumpWay = keyframes`
+export const jumpWay = keyframes`
   0% { transform: translateY(0); color: #ffffff; }
   50% { transform: translateY(-10px); color: #01cfb5; }
   100% { transform: translateY(0); color: #01cfb5; }
 `;
 
-const Nav = styled.nav`
+export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +28,7 @@ const Nav = styled.nav`
   border-image: linear-gradient(to right, #01cfb5, #001e56) 1;
 `;
 
-const NavContainer = styled.div`
+export const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,7 +38,7 @@ const NavContainer = styled.div`
   padding: 15px 20px;
 `;
 
-const Logo = styled.div`
+export const Logo = styled.div`
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
@@ -49,7 +46,7 @@ const Logo = styled.div`
   display: flex;
 `;
 
-const LetterMed = styled.span<{ $delay: string }>`
+export const LetterMed = styled.span<{ $delay: string }>`
   display: inline-block;
   animation: ${jumpMed} 0.5s ease-in-out forwards;
   animation-delay: ${(props) => props.$delay};
@@ -58,7 +55,7 @@ const LetterMed = styled.span<{ $delay: string }>`
   transition: color 0.5s;
 `;
 
-const LetterWay = styled.span<{ $delay: string }>`
+export const LetterWay = styled.span<{ $delay: string }>`
   display: inline-block;
   animation: ${jumpWay} 0.5s ease-in-out forwards;
   animation-delay: ${(props) => props.$delay};
@@ -67,13 +64,13 @@ const LetterWay = styled.span<{ $delay: string }>`
   transition: color 0.5s;
 `;
 
-const NavItems = styled.div`
+export const NavItems = styled.div`
   display: flex;
   gap: 30px;
   align-items: center;
 `;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   color: #001e56;
   text-decoration: none;
   font-size: 1.2rem;
@@ -87,7 +84,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const LogoutButton = styled.button`
+export const LogoutButton = styled.button`
   background-color: transparent;
   color: #001e56;
   font-size: 1.1rem;
@@ -101,37 +98,3 @@ const LogoutButton = styled.button`
     color: #e74c3c;
   }
 `;
-
-const Navbar: React.FC = () => {
-  const router = useRouter();
-
-  const handleLogout = () => {
-    localStorage.removeItem('auth-token');
-    router.push('/');
-  };
-  
-
-  return (
-    <Nav>
-      <NavContainer>
-        <Logo>
-          <LetterMed $delay="0s">m</LetterMed>
-          <LetterMed $delay="0.3s">e</LetterMed>
-          <LetterMed $delay="0.6s">d</LetterMed>
-          <LetterWay $delay="0.9s">w</LetterWay>
-          <LetterWay $delay="1.2s">a</LetterWay>
-          <LetterWay $delay="1.5s">y</LetterWay>
-        </Logo>
-        <NavItems>
-          <StyledLink href="/about">Sobre Mim</StyledLink>
-          <StyledLink href="/hobbies">Hobbies</StyledLink>
-          <StyledLink href="/projects">Projetos</StyledLink>
-          <StyledLink href="/contact">Contato</StyledLink>
-          <StyledLink href="/" onClick={handleLogout}>Logout</StyledLink>
-        </NavItems>
-      </NavContainer>
-    </Nav>
-  );
-};
-
-export default Navbar;

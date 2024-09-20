@@ -1,55 +1,8 @@
 "use client";
 
-import styled from 'styled-components';
 import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
-import Navbar from '@/components/Navbar';
-import withAuth from '@/hoc/withAuth';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  padding-top: 60px;
-  background-color: #f8f9fa;
-  min-height: 100vh;
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  color: #001e56;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 30px;
-`;
-
-const ContactList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-`;
-
-const ContactItem = styled.li`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.2rem;
-  color: #001e56;
-  font-family: 'Poppins', sans-serif;
-`;
-
-const ContactLink = styled.a`
-  color: #001e56;
-  text-decoration: none;
-  transition: color 0.3s;
-
-  &:hover {
-    color: #004085;
-  }
-`;
+import Navbar from '@/components/Navbar/Navbar';
+import { ContactItem, ContactLink, ContactList, Container, Title } from './style';
 
 const ContactPage: React.FC = () => {
   return (
@@ -79,4 +32,4 @@ const ContactPage: React.FC = () => {
   );
 };
 
-export default withAuth(ContactPage);
+export default ContactPage;

@@ -1,39 +1,12 @@
 "use client";
 
-import styled from 'styled-components';
 import { useState } from 'react';
-import Navbar from '../../components/Navbar';
-import HobbyCard from '../../components/HobbyCard';
-import HobbyModal from '../../components/HobbyModal';
+import Navbar from '../../components/Navbar/Navbar';
+import HobbyCard from '../../components/HobbyCard/HobbyCard';
+import HobbyModal from '../../components/HobbyModal/HobbyModal';
 import { hobbiesData } from '../../data/hobbiesData';
 import withAuth from '@/hoc/withAuth';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  min-height: 100vh;
-`;
-
-const Title = styled.h1`
-  font-size: 2.5rem;
-  color: #001e56;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  margin-bottom: 30px;
-  text-align: center;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-`;
-
-const CardsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-  width: 100%;
-`;
+import { Container, CardsContainer, Title } from './style';
 
 const HobbiesPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

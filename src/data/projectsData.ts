@@ -1,0 +1,32 @@
+export const PROJECTS = [
+    {
+      id: '1',
+      Name: 'Loja Virtual',
+      Tecnologies: ['React', 'Api Rest', 'JavaScript', 'CSS', 'HTML', 'Cypress', 'LocalStorage'],
+      StartDate: '01/Nov/2021',
+      ConclusionDate: '04/Nov/2021',
+      VideoLink: 'https://www.youtube.com/embed/i3THVCZUmNM',
+      Description: 'Essa Loja Virtual foi feita usando a API do MercadoLivre e fazendo toda manipulação de informações utilizando apenas props, isso mesmo, apenas props. O maior aprendizado desse projeto veio através da confusão de dados onde era preciso passar informações entre componentes pais e filhos, fazendo a aplicação ficar cheia de funções e de alta complexidade, assim mostrando a necessidade de se usar Redux e React Hooks!',
+      GitHubLink: 'https://github.com/LuanVittor/FrontEnd-Online-Store',
+    },
+    {
+      id: '2',
+      Name: 'Aplicativo de receitas',
+      Tecnologies: ['React', 'Api Rest', 'JavaScript', 'CSS', 'LocalStorage', 'RTL', 'Bootstrap'],
+      StartDate: '02/jan/2022',
+      ConclusionDate: '10/jan/2022',
+      VideoLink: 'https://www.youtube.com/embed/Q7OK1ZuPYhk',
+      Description: 'Um aplicativo de receitas feito com o intuito de aprimorar meu conhecimento em React. Nesse aplicativo, utilizei majoritariamente Context API para manipulação de informações e LocalStorage para salvar informações de sessão. O Aplicativo conta com mais de 15 páginas diferentes, a possibilidade de iniciar receitas, favoritar, compartilhar elas! As Comidas/Bebidas são extraídas de uma API assim como todas suas informações.',
+      GitHubLink: 'https://github.com/LuanVittor/Recipes-App',
+    },
+    {
+      id: '3',
+      Name: 'Kahootify',
+      Tecnologies: ['HTML', 'JavaScript', 'CSS'],
+      StartDate: '30/Sep/2021',
+      ConclusionDate: '02/Oct/2021',
+      VideoLink: 'https://www.youtube.com/embed/1r-7QB_1QrM',
+      Description: 'Uma aplicação descontraída baseada no jogo Kahoot onde o objetivo é acertar o compositor da música que está tocando em menos tempo possível. A aplicação foi feita INTEIRAMENTE em JavaScript, sem a utilização de qualquer biblioteca ou framework. Todas as informações como gênero musical, artista e nome da música foram retiradas da API do Spotify!',
+      GitHubLink: 'https://github.com/LuanVittor/Kahootify',
+    },
+  ];

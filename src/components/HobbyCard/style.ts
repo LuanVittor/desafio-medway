@@ -1,15 +1,6 @@
-"use client";
-
 import styled from 'styled-components';
 
-interface HobbyCardProps {
-  title: string;
-  bgImage: string;
-  onClick: () => void;
-  cursor: string;
-}
-
-const Card = styled.div<{ bgImage: string; cursor: string }>`
+export const Card = styled.div<{ bgImage: string; cursor: string }>`
   position: relative;
   background-image: url(${(props) => props.bgImage});
   background-size: cover;
@@ -35,13 +26,3 @@ const Card = styled.div<{ bgImage: string; cursor: string }>`
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
   }
 `;
-
-const HobbyCard: React.FC<HobbyCardProps> = ({ title, bgImage, onClick, cursor }) => {
-  return (
-    <Card bgImage={bgImage} onClick={onClick} cursor={cursor}>
-      {title}
-    </Card>
-  );
-};
-
-export default HobbyCard;
