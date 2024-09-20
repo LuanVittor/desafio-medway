@@ -60,18 +60,10 @@ docker-compose up --build
 ````
 Isso irá construir as imagens do frontend e backend, e iniciar o PostgreSQL no container.
 
-## Aplicando Migrações e Sincronizando o Banco de Dados
-
-Após subir os containers, é necessário rodar as migrações do Prisma para sincronizar o banco de dados:
-
-```
-docker-compose exec nextjs npx prisma migrate dev --name init
-```
-
 ## Acessando a Aplicação
 Frontend e Backend (Next.js): Acesse http://localhost:3000
 
-## Verificando a Conexão com o Banco de Dados
+## Verificando a Conexão com o Banco de Dados [Opicional]
 Para garantir que o banco de dados PostgreSQL está funcionando corretamente, você pode acessar o container do banco de dados e utilizar o cliente psql:
 
 ```
