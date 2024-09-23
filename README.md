@@ -11,6 +11,7 @@ Este projeto é uma aplicação web fullstack desenvolvida com Next.js no fronte
 
 ```plaintext
 .
+.
 ├── prisma/                       # Configuração do banco de dados
 │   ├── migrations/               # Migrações do banco de dados
 │   └── schema.prisma             # Esquema Prisma
@@ -21,14 +22,19 @@ Este projeto é uma aplicação web fullstack desenvolvida com Next.js no fronte
 │   │   ├── api/                  # APIs de autenticação
 │   │   ├── contact/              # Página de Contato
 │   │   ├── hobbies/              # Página de Hobbies
-│   │   └── projects/             # Página de Projetos
+│   │   ├── projects/             # Página de Projetos
+│   │   ├── page.tsx              # Página de Login (raiz do projeto)
+│   │   └── layout.tsx            # Layout global do projeto
 │   ├── components/               # Componentes de interface
 │   ├── data/                     # Arquivos de dados estáticos
+│   ├── hoc/                      # Higher Order Components (HOCs)
+│   │   └── withAuth.tsx          # HOC para autenticação de rotas
 │   └── globals.css               # Estilos globais
 ├── .env                          # Arquivo de variáveis de ambiente
 ├── docker-compose.yml            # Configuração do Docker Compose
 ├── Dockerfile                    # Dockerfile para o container do Next.js
 └── README.md                     # Este arquivo
+
 
 ```
 
@@ -70,7 +76,3 @@ Para garantir que o banco de dados PostgreSQL está funcionando corretamente, vo
 docker exec -it desafio-medway-db-1 /bin/bash
 psql -U myuser -d nextjsdb
 ```
-## Funcionalidades
-- Tela de Login: Autenticação por email e senha
-- Tela de Cadastro: Validação de senha e verificação se o usuário já está cadastrado
-- Feedback Visual: Toasts para exibir mensagens de erro ou sucesso
