@@ -74,7 +74,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({ onClose, showToastMessage
         />
         <PasswordRequirements>
           A senha deve:
-          <Requirement isValid={isValidLength}>Ter pelo menos 5 caracteres</Requirement>
+          <Requirement isValid={isValidLength}>Ter pelo menos 6 caracteres</Requirement>
           <Requirement isValid={hasLetter}>Conter pelo menos uma letra</Requirement>
           <Requirement isValid={hasNumber}>Conter pelo menos um número</Requirement>
         </PasswordRequirements>
