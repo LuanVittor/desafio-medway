@@ -38,18 +38,20 @@ const AboutPage: React.FC = () => {
           </TimelineItem>
         </Timeline>
 
-        <SectionTitle>Stacks Utilizadas</SectionTitle>
+        <ButtonGroup>
+          <Button onClick={() => router.push('/projects')}>Meus Projetos</Button>
+          <Button onClick={() => router.push('/hobbies')}>Meus Hobbies</Button>
+          <Button onClick={() => router.push('/contact')}>Contato</Button>
+        </ButtonGroup>
+
+        <SectionTitle>Stacks</SectionTitle>
         <SkillsGrid>
           {skills.map((skill, index) => (
             <SkillItem key={index}>{skill}</SkillItem>
           ))}
         </SkillsGrid>
 
-        <ButtonGroup>
-          <Button onClick={() => router.push('/projects')}>Meus Projetos</Button>
-          <Button onClick={() => router.push('/hobbies')}>Meus Hobbies</Button>
-          <Button onClick={() => router.push('/contact')}>Contato</Button>
-        </ButtonGroup>
+        
       </Container>
     </>
   );
