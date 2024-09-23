@@ -25,4 +25,6 @@ export const CardsContainer = styled.div`
   gap: 20px;
   margin-top: 20px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
