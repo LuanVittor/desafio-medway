@@ -3,15 +3,14 @@
 import { useParams, useRouter } from 'next/navigation';
 import Navbar from '../../../components/Navbar/Navbar';
 import withAuth from '@/hoc/withAuth';
-import { MainContainer , Header, Content, Description, IframeContainer, BackButton, Title } from './style';
+import { MainContainer , Header, Content, Description, IframeContainer, BackButton, Title, TechnologiesContainer, TechnologyItem, TechnologiesTitle } from './style';
 import { PROJECTS } from '@/data/projectsData';
-
 
 const ProjectDetailPage: React.FC = () => {
   const params = useParams();
   const router = useRouter();
 
-  const project = PROJECTS.find((project) => project.id === params.id);
+  const project = PROJECTS.find((project) => project.id === +params.id);
 
   if (!project) return <div>Projeto não encontrado</div>;
 
@@ -21,21 +20,29 @@ const ProjectDetailPage: React.FC = () => {
       <MainContainer>
         <Header>
           <BackButton onClick={() => router.push('/projects')}>Voltar</BackButton>
-          <Title>{project.Name}</Title>
+          <Title>{project.name}</Title>
         </Header>
         <Content>
-          <Description>{project.Description}</Description>
+          <Description>{project.detailedDescription}</Description>
           <IframeContainer>
             <iframe
               width="560"
               height="315"
-              src={project.VideoLink}
+              src={project.videoLink}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </IframeContainer>
+           {project.technologies && (
+            <TechnologiesContainer>
+              <TechnologiesTitle>Tecnologias Usadas:</TechnologiesTitle>
+              {project.technologies.map((tech, index) => (
+                <TechnologyItem key={index}>{tech}</TechnologyItem>
+              ))}
+            </TechnologiesContainer>
+          )}
         </Content>
       </MainContainer>
     </>
