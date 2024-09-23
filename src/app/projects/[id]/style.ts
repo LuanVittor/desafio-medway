@@ -63,3 +63,35 @@ export const IframeContainer = styled.div`
   justify-content: center;
   margin-bottom: 20px;
 `;
+
+export const TechnologiesContainer = styled.div`
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #e6f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+`;
+
+export const TechnologiesTitle = styled.h3`
+  color: #001e56;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+`;
+
+export const TechnologyItem = styled.p`
+  color: #005f73;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+
+  &:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #01cfb5;
+    font-size: 1.5rem;
+  }
+`;
