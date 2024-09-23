@@ -1,13 +1,14 @@
-import StyledComponentsRegistry from "../../lib/registry"
+import StyledComponentsRegistry from "../../lib/registry";
+import ClientWrapper from "@/components/ClientWrapper";
 
 export const metadata = {
   title: 'Medway',
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -15,8 +16,10 @@ export default function RootLayout({
         <link rel="icon" href="/images/medway.png" />
       </head>
       <StyledComponentsRegistry>
-        <body>{children}</body>
+        <ClientWrapper>
+          <body>{children}</body>
+        </ClientWrapper>
       </StyledComponentsRegistry>
     </html>
-  )
+  );
 }

@@ -2,13 +2,17 @@
 
 import { useRouter } from 'next/navigation';
 import { NavContainer, Logo, NavItems, Nav, Letter, StyledLink } from './style';
+import { signOut } from 'next-auth/react';
 
 const Navbar: React.FC = () => {
   const router = useRouter();
 
   const handleLogout = () => {
-    localStorage.removeItem('auth-token');
-    router.push('/');
+    signOut({
+      redirect: false,
+    }).then(() => {
+      router.push('/');
+    });
   };
   
   return (

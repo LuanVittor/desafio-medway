@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { signIn } from 'next-auth/react';
 import RegisterModal from '@/components/RegisterModal/RegisterModal';
 import { Button, Card, Container, Input, RegisterLink, Title, Toast } from './style';
 
@@ -28,21 +29,16 @@ const LoginPage: React.FC = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
+      const res = await signIn('credentials', {
+        redirect: false,
+        email,
+        password,
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        localStorage.setItem('auth-token', data.token);
-        router.push('/about');
+      if (res?.error) {
+        showToastMessage(res.error || 'Erro ao fazer login.', false);
       } else {
-        showToastMessage(data.message || 'Erro ao fazer login', false);
+        router.push('/about');
       }
     } catch (error) {
       console.error('Erro ao fazer login:', error);
