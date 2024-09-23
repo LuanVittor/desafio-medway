@@ -54,7 +54,6 @@ export const Logo = styled.div`
   display: flex;
 `;
 
-
 export const NavItems = styled.div`
   display: flex;
   gap: 30px;
