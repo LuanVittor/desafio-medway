@@ -1,6 +1,5 @@
 "use client";
 
-import styled, { keyframes } from 'styled-components';
 import { useRouter } from 'next/navigation';
 import Navbar from '../../components/Navbar/Navbar';
 import withAuth from '@/hoc/withAuth';
