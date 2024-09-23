@@ -151,6 +151,7 @@ export const Button = styled.button`
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  width: 150px;
 
   &:hover {
     background-color: #004085;
