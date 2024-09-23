@@ -6,16 +6,15 @@ import { useEffect } from 'react';
 const withAuth = (WrappedComponent: React.FC) => {
   const AuthenticatedComponent = (props: any) => {
     const router = useRouter();
+    const token = localStorage.getItem('auth-token');
 
     useEffect(() => {
-      const token = localStorage.getItem('auth-token');
-
       if (!token) {
         router.push('/');
       }
-    }, [router]);
+    }, [router, token]);
 
-    return <WrappedComponent {...props} />;
+    return token ? <WrappedComponent {...props} /> : null;
   };
 
   return AuthenticatedComponent;

@@ -3,6 +3,7 @@
 import { FaPhone, FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 import Navbar from '@/components/Navbar/Navbar';
 import { ContactItem, ContactLink, ContactList, Container, Title } from './style';
+import withAuth from '@/hoc/withAuth';
 
 const ContactPage: React.FC = () => {
   return (
@@ -32,4 +33,4 @@ const ContactPage: React.FC = () => {
   );
 };
 
-export default ContactPage;
+export default withAuth(ContactPage);
