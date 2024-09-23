@@ -158,9 +158,3 @@ export const Button = styled.button`
     transform: scale(1.05);
   }
 `;
-
-export const skills = [
-  'Python', 'Django', 'JavaScript', 'Angular', 'React', 
-  'Node.js', 'Docker', 'Material UI', 'Git - Github', 
-  'Redux', 'Testes Unitários'
-];

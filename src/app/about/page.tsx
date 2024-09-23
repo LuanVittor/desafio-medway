@@ -3,9 +3,13 @@
 import { useRouter } from 'next/navigation';
 import Navbar from '../../components/Navbar/Navbar';
 import withAuth from '@/hoc/withAuth';
-import { ProfilePicture, Container, Introduction, Name, Description, SectionTitle, Timeline, TimelineItem, JobTitle, JobDescription, SkillsGrid, Button, ButtonGroup, SkillItem, skills } from './style';
+import { ProfilePicture, Container, Introduction, Name, Description, SectionTitle, Timeline, TimelineItem, JobTitle, JobDescription, SkillsGrid, Button, ButtonGroup, SkillItem } from './style';
 
-
+const skills = [
+  'Python', 'Django', 'JavaScript', 'Angular', 'React', 
+  'Node.js', 'Docker', 'Material UI', 'Git - Github', 
+  'Redux', 'Testes Unitários'
+];
 
 const AboutPage: React.FC = () => {
   const router = useRouter();
